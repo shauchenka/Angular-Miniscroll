@@ -1,8 +1,8 @@
-![Miniscroll Angular ](http://miniscroll.rogerluizm.com.br/fb.jpg)
+![Angular Miniscroll](http://miniscroll.rogerluizm.com.br/fb.jpg)
 
-Miniscroll is a little library for touch and desktop scrollbar application. if you found bugs send it to rogerluizm@gmail.com or send to <a href="https://github.com/rogerluiz/Miniscroll-JS/issues?page=1&state=open">issue</a> page
+Angular Miniscroll is a fork of little library for touch and desktop scrollbar application - Miniscroll-JS. if you found bugs send it to anton@trackduck.com or send to <a href="https://github.com/shauchenka/Angular-Miniscroll/issues?page=1&state=open">issue</a> page
 
-_version 1.2.8_
+_version 0.1_
 
 ### Include miniscroll.js into your page:
 
