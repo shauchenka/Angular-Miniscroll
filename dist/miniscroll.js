@@ -41,7 +41,7 @@
 	Miniscroll = function (selector, options) {
 		this.type = "";
 		this.is = "static";
-		this.target = this.getElement(selector);
+		this.target = selector[0];
 		this.container;
 		this.tracker;
 		this.thumb;
