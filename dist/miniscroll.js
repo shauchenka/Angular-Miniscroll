@@ -179,11 +179,6 @@
 			(this.offset(this.container).height * this.offset(this.tracker).height) / this.target.scrollHeight
 		);
 
-		var offset = new Point(
-			(this.offset(this.container).width * this.offset(this.tracker).width) / this.target.scrollWidth,
-			(this.offset(this.container).height * this.offset(this.tracker).height) / this.target.scrollHeight
-		);
-
 		var thumbSize = new Point(
 			(this.settings.sizethumb === undefined || this.settings.sizethumb === 'auto') ? offset.x : this.settings.sizethumb,
 			(this.settings.sizethumb === undefined || this.settings.sizethumb === 'auto') ? offset.y : this.settings.sizethumb
@@ -248,7 +243,7 @@
 				this.container.style.left = this.offset(this.target).left + "px";
 			}
 		}
-	}
+	};
 
 	/**
 	 * Update thumb position
@@ -273,7 +268,7 @@
 		} else {
 			this.thumb.style.left = Math.round(this.thumb_pos.x) + 'px';
 		}
-	}
+	};
 
 
 	//=============================
@@ -325,15 +320,8 @@
 					this.target.scrollLeft = this.keypos_thumb.x;
 				}
 
+				(this.percent >= 1 || this.percent <= 0) ? this.preventScrolling = true : this.updateContainerPosition();
 
-
-				if (this.percent >= 1 || this.percent <= 0) {
-					this.preventScrolling = true;
-				} else {
-					this.preventScrolling = false;
-				}
-
-				this.updateContainerPosition();
 			});
 		});
 
@@ -396,7 +384,7 @@
 	 * @param  {[type]} event [description]
 	 * @return {[type]}       [description]
 	 */
-	Miniscroll[prototype].onScrollTouchEnd = function (event) {
+	Miniscroll[prototype].onScrollTouchEnd = function () {
 		this.scrolling = false;
 		this.unbind(this.target, "touchend", this.onScrollTouchEnd);
 	};
@@ -619,7 +607,7 @@
 			width: ((this.settings.axis === "x") ? scrollWidth : this.settings.size) + "px",
 			height: ((this.settings.axis === "y") ? scrollHeight : this.settings.size) + "px",
 			top: ((this.settings.axis === "y") ? this.offset(this.target).top : scrollY) + "px",
-			left: ((this.settings.axis === "x") ? this.offset(this.target).left : scrollX) + "px",
+			left: ((this.settings.axis === "x") ? this.offset(this.target).left : scrollX) + "px"
 		});
 
 		// Atualiza o tamanho do tracker
